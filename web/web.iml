@@ -17,7 +17,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Node.js v0.10.20 Core Modules" level="application" />
-    <orderEntry type="library" name="compass-library" level="project" />
     <orderEntry type="library" name="web node_modules" level="project" />
+    <orderEntry type="library" name="kinetic-v5.1.0" level="project" />
+    <orderEntry type="library" name="compass-library" level="project" />
   </component>
 </module>

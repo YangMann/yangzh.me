@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title_extend %}{% endblock %}
+{% block body_id %}id="home"{% endblock %}
+{% block content %}
+    <div class="wrapper">
+        <section class="row">
+            <article class="eight columns centered">
+                <h1>IN PROGRESS</h1>
+                <h4>Stay tuned!</h4>
+            </article>
+        </section>
+    </div>
+    <div id="kinetic-bg">
+        <canvas></canvas>
+    </div>
+{% endblock %}
+{% block script %}
+    <script>
+    /**
+     * Dynamic Triangles
+     * Copyright (C) Yang ZHANG <zhangyang93@rocketmail.com>
+     *     A canvas trick to display dynamic triangles to simulate a 3D experience,
+     *     inspired by the login window of QQ 6.1
+     */
+        $(document).ready(function () {
+            var canvasHeight = 300, canvasWidth = window.innerWidth, nodesPerLine = 10,
+                    lines = 4, threshold = 40, maxDrift = 100, maxDim = 30, baseColor = "#065688";
+            var canvas = $(document).find("#kinetic-bg>canvas"), ctx = canvas[0].getContext("2d")/*,
+                    colors = ['#f35d4f', '#f36849', '#c0d988', '#6ddaf1', '#f1e85b']*/;
+            resizeCanvas();
+            var nodeRows = [];
+
+            function resizeCanvas() {
+                canvas[0].width = window.innerWidth;
+                canvas[0].height = canvasHeight;
+            }
+
+            function Node(row, idx) {
+                this.x = canvasWidth / (nodesPerLine - 1) * idx
+                - Math.random() * threshold + threshold / 2;
+                this.y = canvasHeight / (lines - 1) * row
+                - Math.random() * threshold + threshold / 2;
+                // this.rgba = colors[Math.round(Math.random() * 4)];
+                // this.r = 1;
+                this.v = Math.random() - 0.5;
+                this.dir = Math.round(Math.random()) * 2 - 1;
+                this.dim = Math.random() * maxDim;
+                this.dimdir = Math.round(Math.random()) * 2 - 1;
+                this.dimv = this.v * maxDim / maxDrift * 2;
+                this.c = shadeColor(baseColor, this.dim);
+            }
+
+            /**
+             * http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+             */
+            function shadeColor(color, percent) {
+                var num = parseInt(color.slice(1), 16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, G = (num >> 8 & 0x00FF) + amt, B = (num & 0x0000FF) + amt;
+                return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+                ctx.globalCompositeOperation = 'source-cover';
+                for (var i = 0; i < lines; i++) {
+                    for (var j = 0; j < nodesPerLine; j++) {
+                        var temp = nodeRows[i][j];
+                        /*ctx.fillStyle = temp.rgba;
+                        ctx.strokeStyle = temp.rgba;
+
+                        ctx.beginPath();
+                        ctx.arc(temp.x, temp.y, temp.r, 0, Math.PI * 2, true);
+                        ctx.fill();
+                        ctx.closePath();
+
+                        ctx.beginPath();
+                        ctx.arc(temp.x, temp.y, temp.r + 5, 0, Math.PI * 2, true);
+                        ctx.stroke();
+                        ctx.closePath();*/
+
+                        temp.x += temp.vx * temp.dir;
+                        temp.y += temp.vy * temp.dir;
+                        if ((temp.dim <= maxDim) && (temp.dim >= -maxDim / 2)) {
+                            temp.dim += temp.dimv * temp.dimdir;
+                        } else {
+                            temp.dimdir = -temp.dimdir;
+                            temp.dim += temp.dimv * temp.dimdir;
+                        }
+                        temp.c = shadeColor(baseColor, temp.dim);
+
+                        if (Math.abs(temp.x - temp.ox) >= maxDrift) {
+                            temp.dir = -temp.dir;
+                        }
+                    }
+                }
+                for (i = 0; i < lines - 1; i++) {
+                    for (j = 0; j < nodesPerLine - 1; j++) {
+                        temp = nodeRows[i][j];
+                        var temp1 = nodeRows[i][j + 1];
+                        var temp2 = nodeRows[i + 1][j + 1];
+
+                        // ctx.strokeStyle = 'black';
+                        ctx.fillStyle = temp.c;
+                        ctx.beginPath();
+                        ctx.moveTo(temp.x, temp.y);
+                        ctx.lineTo(temp1.x, temp1.y);
+                        ctx.lineTo(temp2.x, temp2.y);
+                        ctx.lineTo(temp.x, temp.y);
+                        // ctx.stroke();
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+                }
+                for (i = 0; i < lines - 1; i++) {
+                    for (j = 0; j < nodesPerLine - 1; j++) {
+                        temp = nodeRows[i][j];
+                        temp1 = nodeRows[i + 1][j];
+                        temp2 = nodeRows[i + 1][j + 1];
+                        var temp3 = nodeRows[i][j + 1];
+                        // ctx.strokeStyle = 'black';
+                        ctx.fillStyle = temp3.c;
+                        ctx.beginPath();
+                        ctx.moveTo(temp.x, temp.y);
+                        ctx.lineTo(temp1.x, temp1.y);
+                        ctx.lineTo(temp2.x, temp2.y);
+                        ctx.lineTo(temp.x, temp.y);
+                        // ctx.stroke();
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+                }
+
+            }
+
+            window.requestAnimFrame = (function () {
+                return window.requestAnimationFrame ||
+                        window.webkitRequestAnimationFrame ||
+                        window.mozRequestAnimationFrame ||
+                        function (callback) {
+                            window.setTimeout(callback, 1000 / 60);
+                        };
+            })();
+
+            (function init() {
+                canvas.css('background-color', baseColor);
+                window.addEventListener('resize', resizeCanvas, false);
+                for (var i = 0; i < lines; i++) {
+                    nodeRows.push([]);
+                    for (var j = 0; j < nodesPerLine; j++) {
+                        nodeRows[i].push(new Node(i, j));
+                    }
+                }
+                for (i = 0; i < lines; i++) {
+                    for (j = 0; j < nodesPerLine; j++) {
+                        var temp = nodeRows[i][j];
+                        var temp2 = nodeRows[i][++j];
+                        var dx = temp2.x - temp.x;
+                        var dy = temp2.y - temp.y;
+                        var c = Math.cos(Math.atan(dy / dx));
+                        var s = Math.sin(Math.atan(dy / dx));
+                        temp.vx = temp.v * c;
+                        temp.vy = temp.v * s;
+                        temp.ox = temp.x;
+                        temp.oy = temp.y;
+                        temp2.vx = temp.v * c;
+                        temp2.vy = temp.v * s;
+                        temp2.ox = temp2.x;
+                        temp2.oy = temp2.y;
+                    }
+                }
+            })();
+
+            (function loop() {
+                draw();
+                requestAnimFrame(loop);
+            })();
+        });
+    </script>
+{% endblock %}
