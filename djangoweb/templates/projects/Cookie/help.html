@@ -1,0 +1,123 @@
+<!--
+Copyright (C) 2012, Cookie Team SJTU. All Rights Reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1.  Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+2.  Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+3.  Neither the name of Cookie Team SJTU (Shanghai Jiao Tong University)
+    nor the names of its contributors may be used to endorse or promote 
+    products derived from this software without specific prior written permission.
+
+=====================================================
+		      			Credits
+			  Zhang Yang		Zhou Hao
+			  Jin Ke			Sha Yuchen
+=====================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	<title>Cookie - Chinese Language Segment Toolkit</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Cookie - Chinese Language Segment Toolkit" />
+        <meta name="keywords" content="Chinese, language, segment, cookie, zy, jk, zh, syc, SJTU" />
+        <meta name="author" content="zy jk" />
+        <link rel="shortcut icon" href="favicon/cookie.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="/css/styleIE.css" />
+		<![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css' />
+    </head>
+<body style="background-image: url(images/pattern.png); background-color:#CCCCCC">
+		<div class="content" style="margin: 0px;">
+			<div id="portfolio" class="portfolio">
+				<div class="portfolio_item">
+					<div class="image_wrap">
+						<img src="images/website.jpg" alt="Website"/>
+					</div>
+					<div class="zoom_overlay">
+						<img src="images/website_notes.png" alt="WebsiteNotes"/>
+					</div>
+				</div>
+				
+			</div>
+            <span style="position:fixed; left:55px; bottom:40px; z-index:999; font-size:36px; font-family: 'Josefin Slab', Arial, sans-serif; text-shadow: 1px 1px 4px rgba(71,80,23,1); color:#FFC;"><a href="index.html" style="display:block; background-color:rgba(153,153,153,0.6); padding:5px; -webkit-border-radius: 15px 15px 15px 15px; margin:15px; width:80px; text-align:center;">back</a></span>
+		</div>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+				//main div
+				var $portfolio	= $('#portfolio');
+				
+				//click event for the image : 
+				//show the overlay
+				$portfolio.find('.image_wrap').bind('click',function(){
+					var $elem	= $(this);
+					var $image	= $elem.find('img:first');
+					$image.stop(true)
+						  .animate({
+							'width'	:'1024px',
+							'height':'600px'
+						  },250);
+						  
+					//the overlay is the next element
+					var opacity	= '1';
+					if($.browser.msie)
+						opacity	= '0.5'
+					$elem.next()
+						 .stop(true)
+						 .animate({
+							'width'		:'1200px',
+							'height'	:'750px',
+							'marginTop'	:'-350px',
+							'marginLeft':'-560px',
+							'opacity'	:opacity
+						},250,function(){
+							//fade in the annotations
+							$(this).find('img').fadeIn();
+						});
+				});
+				
+				//click event for the overlay :
+				//show the image again and hide the overlay
+				$portfolio.find('.zoom_overlay').bind('click',function(){
+					var $elem	= $(this);
+					var $image	= $elem.prev()
+									   .find('img:first');
+					//hide overlay
+					$elem.find('img')
+						 .hide()
+						 .end()
+						 .stop(true)
+						 .animate({
+							'width'		:'1024px',
+							'height'	:'600px',
+							'marginTop'	:'-200px',
+							'marginLeft':'-200px',
+							'opacity'	:'0'
+						 },125,function(){
+							//hide overlay
+							$(this).hide();
+						 });
+						 
+					//show image	 
+					$image.stop(true)
+						  .animate({
+							'width':'1280px',
+							'height':'800px'
+						  },250);
+				});
+            });
+        </script>
+    </body>
+</html>

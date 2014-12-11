@@ -3,6 +3,7 @@
 body#home {
   font-weight: $font-weight-regular;
   text-align: center;
+  overflow-x: hidden;
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: $font-weight-thin;
@@ -15,47 +16,38 @@ body#home {
   li {
     text-align: left;
   }
-}
 
-footer {
-  text-align: left;
-  #author {
-    font-size: 10px;
-    color: #cccccc;
+  #kinetic-bg {
+    $canvas-height: 400px;
+    height: $canvas-height;
+    position: relative;
+    > canvas {
+      height: $canvas-height;
+    }
+    > .wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
 
-    a {
-      color: #999999;
+      h1, h2, h3,
+      h4, h5, h6 {
+        color: white;
+      }
+
+      h3 {
+        letter-spacing: .1em;
+      }
+
+      p.contact {
+        a {
+          color: white;
+        }
+        text-align: center;
+      }
     }
   }
-}
 
-.splash {
-  @include hidden(all-phones);
-
-  background: $navbar-color url("../img/SJTU-white@2x.png") no-repeat 16% 16px;
-  background-size: 160px;
-  text-align: right;
-  padding: 40px 0;
-
-  h1, h5 {
-    color: $navbar-link-color;
-  }
-
-  h1 > span {
-    font-size: larger;
-  }
-}
-
-.logo.mobile {
-  @include hidden("min-width: 720px");
-  @include visible(all-phones);
-}
-
-#wxb_intro {
-  @include respond("min-width: 720px") {
-    background: url("http://iwct.sjtu.edu.cn/Personal/xwang8/index_files/xinbing_5.jpg") no-repeat right bottom;
-    background-size: contain;
-  }
 }
 
 .wrapper {
@@ -67,30 +59,10 @@ footer {
   background-size: cover;
 }
 
-#wxb_intro {
-  text-align: center;
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-  }
-
-  h2 {
-    padding-bottom: .5rem;
-  }
-
-  dl {
-    margin-bottom: 1rem;
-  }
-}
-
-#whats-new-table {
-  tr {
-    td:first-child {
-      font-weight: $font-weight-regular;
-    }
-  }
-}
-
 .nobreak {
   white-space: nowrap;
+}
+
+#bio {
+  text-align: left;
 }

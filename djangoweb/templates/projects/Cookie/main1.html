@@ -1,0 +1,18 @@
+{% extends 'projects/Cookie/_base.html' %}
+{% block menu_extend %}
+        <ul class="bmenu">
+            <li><a href="dict">+Dict</a></li>
+            <li><a href="rules">+Rules</a></li>
+        </ul>
+{% endblock %}
+{% block content %}
+    <div class="windowUp1">
+        <form method="post" action="/choose"><textarea cols="52" rows="7" class="windowUp1" id="userInput"
+                                                       name="userInput2"
+                                                       placeholder="Please enter sentence number here."
+                                                       style="white-space:normal;font-family: 'Josefin Slab', Arial, sans-serif;"></textarea>
+            <span id="button1"><button class="button" type="submit" onClick="submit"><a><strong>+</strong></a></button></span>
+        </form>
+    </div>
+    <div class="windowDown1" style="white-space:normal; overflow:auto">{{ out_sentence }}</div>
+{% endblock %}

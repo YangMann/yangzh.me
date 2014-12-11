@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'djangoweb.views.home', name='home'),
+    url(r'^proj/Cookie/([A-Za-z]*)$', 'djangoweb.views.project_cookie'),
     # url(r'^djangoweb/', include('djangoweb.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

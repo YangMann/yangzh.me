@@ -3,31 +3,56 @@
 {% block title_extend %}{% endblock %}
 {% block body_id %}id="home"{% endblock %}
 {% block content %}
-    <div class="wrapper">
+    <div id="kinetic-bg">
+        <canvas></canvas>
+        <div class="wrapper">
+            <section class="row">
+                <article class="eight columns centered">
+                    <h1>YANG ZHANG</h1>
+
+                    <h3>DESIGNER & ENGINEER</h3>
+                    <h5>IN PROGRESS</h5>
+
+                    <p class="contact">
+                        <a href="https://github.com/YangMann"><i class="icon-github"></i></a>
+                        <a href="https://www.linkedin.com/pub/yang-zhang/98/787/751"><i class="icon-linkedin"></i></a>
+                        <a href="#"><i class="icon-sina-weibo"></i></a>
+                        <a href="mailto:zhangyang93@rocketmail.com"><i class="icon-mail"></i></a>
+                    </p>
+                </article>
+            </section>
+        </div>
+    </div>
+    <div class="wrapper" id="bio">
         <section class="row">
-            <article class="eight columns centered">
-                <h1>IN PROGRESS</h1>
-                <h4>Stay tuned!</h4>
+            <article class="six columns">
+                <h4>BIO</h4>
+
+                <p>I am a senior student at Shanghai Jiao Tong University, majoring in Computer Science & Technology. I
+                    am passionate and motivated. I leaded or participated in several successful <a href="#">research projects</a>
+                    during the undergraduate years. </p>
+
+                <p>I love to design & make cool stuffs. SCROLL DOWN to see more! </p>
+            </article>
+            <article class="six columns">
+                <h4>MERITS</h4>
             </article>
         </section>
     </div>
-    <div id="kinetic-bg">
-        <canvas></canvas>
-    </div>
+
 {% endblock %}
 {% block script %}
     <script>
-    /**
-     * Dynamic Triangles
-     * Copyright (C) Yang ZHANG <zhangyang93@rocketmail.com>
-     *     A canvas trick to display dynamic triangles to simulate a 3D experience,
-     *     inspired by the login window of QQ 6.1
-     */
+        /**
+         * Dynamic Triangles
+         * Copyright (C) Yang ZHANG <zhangyang93@rocketmail.com>
+         *     A canvas trick to display dynamic triangles and simulate a 3D experience
+         */
         $(document).ready(function () {
-            var canvasHeight = 300, canvasWidth = window.innerWidth, nodesPerLine = 10,
-                    lines = 4, threshold = 40, maxDrift = 100, maxDim = 30, baseColor = "#065688";
+            var canvasHeight = 400, canvasWidth = window.innerWidth, nodesPerLine = 10,
+                    lines = 5, threshold = 40, maxDrift = 100, maxDim = 30, baseColor = "#065688";
             var canvas = $(document).find("#kinetic-bg>canvas"), ctx = canvas[0].getContext("2d")/*,
-                    colors = ['#f35d4f', '#f36849', '#c0d988', '#6ddaf1', '#f1e85b']*/;
+             colors = ['#f35d4f', '#f36849', '#c0d988', '#6ddaf1', '#f1e85b']*/;
             resizeCanvas();
             var nodeRows = [];
 
@@ -43,7 +68,7 @@
                 - Math.random() * threshold + threshold / 2;
                 // this.rgba = colors[Math.round(Math.random() * 4)];
                 // this.r = 1;
-                this.v = Math.random() - 0.5;
+                this.v = Math.random() * 0.8 - 0.4;
                 this.dir = Math.round(Math.random()) * 2 - 1;
                 this.dim = Math.random() * maxDim;
                 this.dimdir = Math.round(Math.random()) * 2 - 1;
@@ -66,17 +91,17 @@
                     for (var j = 0; j < nodesPerLine; j++) {
                         var temp = nodeRows[i][j];
                         /*ctx.fillStyle = temp.rgba;
-                        ctx.strokeStyle = temp.rgba;
+                         ctx.strokeStyle = temp.rgba;
 
-                        ctx.beginPath();
-                        ctx.arc(temp.x, temp.y, temp.r, 0, Math.PI * 2, true);
-                        ctx.fill();
-                        ctx.closePath();
+                         ctx.beginPath();
+                         ctx.arc(temp.x, temp.y, temp.r, 0, Math.PI * 2, true);
+                         ctx.fill();
+                         ctx.closePath();
 
-                        ctx.beginPath();
-                        ctx.arc(temp.x, temp.y, temp.r + 5, 0, Math.PI * 2, true);
-                        ctx.stroke();
-                        ctx.closePath();*/
+                         ctx.beginPath();
+                         ctx.arc(temp.x, temp.y, temp.r + 5, 0, Math.PI * 2, true);
+                         ctx.stroke();
+                         ctx.closePath();*/
 
                         temp.x += temp.vx * temp.dir;
                         temp.y += temp.vy * temp.dir;

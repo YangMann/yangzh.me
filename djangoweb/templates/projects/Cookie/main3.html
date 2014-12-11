@@ -1,0 +1,28 @@
+{% extends 'projects/Cookie/_base.html' %}
+{% block menu_extend %}
+    <ul class="bmenu">
+        <li><a href="dict">+Dict</a></li>
+        <li><a href="rules">+Rules</a></li>
+    </ul>
+{% endblock %}
+{% block content %}
+    <div class="windowUp" style="height:585px">
+        <form method="post" action="/proj/Cookie/paragraph"><textarea cols="52" rows="15" id="userInput"
+                                                                      name="user-input-1"
+                                                                      placeholder="Please input Chinese text here via keyboard or voice. "
+                                                                      style="white-space:normal;font-family: 'Josefin Slab', Arial, sans-serif"></textarea><span
+                style="position:absolute; right:0px; z-index:999"><input
+                id="speak" name="speakInput1" class="speechButton" title="Voice input, press Enter or '+' to submit"
+                lang="zh" x-webkit-speech="" style="display: block;"></span>
+            <span id="button1"><button class="button" title="Slice it!" onClick="submit"><a><strong>+</strong></a>
+            </button></span>
+            <span id="button2"><button class="button" title="Open file, txt only"><a><strong>#</strong></a>
+            </button></span>
+            <span style="cursor:pointer"><input type="file" name="txtInput"
+                                                title="Open file, txt only"
+                                                style="opacity:0; width:50px; height:30px; position:absolute; right:54px; bottom:0; z-index:999;"></span>
+        {% csrf_token %}
+        </form>
+
+    </div>
+{% endblock %}

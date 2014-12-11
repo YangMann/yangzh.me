@@ -18,7 +18,8 @@ $max-device-width:  2880px;
 $nav-distance:  0;
 
 // Typography
-$font-family: "Open Sans";
+$font-family: 'Raleway', 'Segoe UI', Arial, sans-serif;
+$font-family-serif: 'Alegreya', Georgia, serif;
 $font-style-italic:  italic;
 $icons:  entypo;
 $font-smoothing:  antialiased;
@@ -26,7 +27,7 @@ $font-smoothing:  antialiased;
 // Font Weights
 $font-weight-bold:  700;
 $font-weight-semibold:  600;
-$font-weight-medium:  400;
+$font-weight-medium:  500;
 $font-weight-regular:  400;
 $font-weight-light:  300;
 $font-weight-thin:  300;
@@ -34,6 +35,7 @@ $header-font-weight: Normal;
 $body-font-weight:  $font-weight-regular;
 $type-font-weight:  $font-weight-regular;
 $link-font-weight:  $font-weight-regular;
+$p-font-weight: $font-weight-medium;
 $button-font-weight:  $font-weight-semibold;
 $tabs-font-weight:  $font-weight-semibold;
 
