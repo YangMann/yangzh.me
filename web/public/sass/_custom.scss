@@ -1,5 +1,13 @@
 // Your custom SCSS should be written here...
 
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 body#home {
   font-weight: $font-weight-regular;
   text-align: center;
@@ -13,22 +21,25 @@ body#home {
     padding-bottom: .5em;
   }
 
-  li {
-    text-align: left;
-  }
-
   #kinetic-bg {
-    $canvas-height: 400px;
-    height: $canvas-height;
+    //    $canvas-height: 400px;
+    //    height: $canvas-height;
     position: relative;
-    > canvas {
-      height: $canvas-height;
-    }
+    //    > canvas {
+    //      height: $canvas-height;
+    //    }
     > .wrapper {
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
+      left: 0;
+      right: 0;
+      background: transparent url(../img/bgz.png);
+
+      .row {
+        @include vertical-center;
+      }
 
       h1, h2, h3,
       h4, h5, h6 {
@@ -65,4 +76,92 @@ body#home {
 
 #bio {
   text-align: left;
+
+  article:first-child {
+    padding-right: 2em;
+  }
 }
+
+#jumptable {
+  padding: 0 20px;
+}
+
+.jumplinks-wrap {
+  height: 70px;
+}
+
+@media only screen and (max-width: 768px) {
+  .jumplinks-wrap {
+    display: none;
+  }
+}
+
+.jumplinks {
+  -webkit-transform: translateZ(0);
+  ul {
+    border: 1px solid #ECECEC;
+    display: table;
+    width: 100%;
+  }
+  li {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    display: block;
+    color: #4A4D50;
+    background: #fff;
+    padding: 1em 0;
+    &:hover {
+      color: #333;
+    }
+  }
+  li + li a {
+    border-left: 1px solid #ECECEC;
+  }
+}
+
+.jumplinks.fixed {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+
+  &:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .jumplinks li {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .jumplinks li {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .jumplinks li:first-child,
+  .jumplinks li:first-child + li {
+    border-bottom: 1px solid #ececec;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .jumplinks a {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+

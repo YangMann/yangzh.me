@@ -1,19 +1,13 @@
 /**
-* Gumby Framework
+* YANGZH.ME
 * ---------------
+* __  _____    _   ________   _____   __  _____    _   ________
+* \ \/ /   |  / | / / ____/  /__  /  / / / /   |  / | / / ____/
+*  \  / /| | /  |/ / / __      / /  / /_/ / /| | /  |/ / / __
+*  / / ___ |/ /|  / /_/ /     / /__/ __  / ___ |/ /|  / /_/ /
+* /_/_/  |_/_/ |_/\____/     /____/_/ /_/_/  |_/_/ |_/\____/
 *
-* Follow @gumbycss on twitter and spread the love.
-* We worked super hard on making this awesome and released it to the web.
-* All we ask is you leave this intact. #gumbyisawesome
-*
-* Gumby Framework
-* http://gumbyframework.com
-*
-* Built with love by your friends @digitalsurgeons
-* http://www.digitalsurgeons.com
-*
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
+* Authored by Yang ZHANG <zhangyang93@rocketmail.com> with passion.
 */
 @import url(http://fonts.googleapis.com/css?family=Raleway:600,700,500,400,300|Alegreya:400italic,700italic,400,700);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
@@ -1680,10 +1674,9 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 body#home { font-weight: 400; text-align: center; overflow-x: hidden; }
 body#home h1, body#home h2, body#home h3, body#home h4, body#home h5, body#home h6 { font-weight: 300; }
 body#home h2 { padding-bottom: .5em; }
-body#home li { text-align: left; }
-body#home #kinetic-bg { height: 400px; position: relative; }
-body#home #kinetic-bg > canvas { height: 400px; }
-body#home #kinetic-bg > .wrapper { position: absolute; width: 100%; height: 100%; top: 0; }
+body#home #kinetic-bg { position: relative; }
+body#home #kinetic-bg > .wrapper { position: absolute; width: 100%; height: 100%; top: 0; left: 0; right: 0; background: transparent url(../img/bgz.png); }
+body#home #kinetic-bg > .wrapper .row { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
 body#home #kinetic-bg > .wrapper h1, body#home #kinetic-bg > .wrapper h2, body#home #kinetic-bg > .wrapper h3, body#home #kinetic-bg > .wrapper h4, body#home #kinetic-bg > .wrapper h5, body#home #kinetic-bg > .wrapper h6 { color: white; }
 body#home #kinetic-bg > .wrapper h3 { letter-spacing: .1em; }
 body#home #kinetic-bg > .wrapper p.contact { text-align: center; }
@@ -1696,3 +1689,24 @@ body#home #kinetic-bg > .wrapper p.contact a { color: white; }
 .nobreak { white-space: nowrap; }
 
 #bio { text-align: left; }
+#bio article:first-child { padding-right: 2em; }
+
+#jumptable { padding: 0 20px; }
+
+.jumplinks-wrap { height: 70px; }
+
+@media only screen and (max-width: 768px) { .jumplinks-wrap { display: none; } }
+.jumplinks { -webkit-transform: translateZ(0); }
+.jumplinks ul { border: 1px solid #ECECEC; display: table; width: 100%; }
+.jumplinks li { display: table-cell; margin: 0; padding: 0; }
+.jumplinks a { display: block; color: #4A4D50; background: #fff; padding: 1em 0; }
+.jumplinks a:hover { color: #333; }
+.jumplinks li + li a { border-left: 1px solid #ECECEC; }
+
+.jumplinks.fixed { -webkit-transition-property: opacity; -moz-transition-property: opacity; -o-transition-property: opacity; transition-property: opacity; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90); opacity: 0.9; }
+.jumplinks.fixed:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
+
+@media only screen and (max-width: 768px) { .jumplinks li { text-align: center; } }
+@media only screen and (max-width: 700px) { .jumplinks li { display: inline-block; width: 50%; }
+  .jumplinks li:first-child, .jumplinks li:first-child + li { border-bottom: 1px solid #ececec; } }
+@media only screen and (max-width: 768px) { .jumplinks a { font-size: 14px; font-size: 0.875rem; } }
