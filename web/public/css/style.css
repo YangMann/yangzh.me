@@ -1710,3 +1710,4 @@ body#home #kinetic-bg > .wrapper p.contact a { color: white; }
 @media only screen and (max-width: 700px) { .jumplinks li { display: inline-block; width: 50%; }
   .jumplinks li:first-child, .jumplinks li:first-child + li { border-bottom: 1px solid #ececec; } }
 @media only screen and (max-width: 768px) { .jumplinks a { font-size: 14px; font-size: 0.875rem; } }
+.prompt-scroll-down { position: absolute; left: 0; right: 0; width: 100%; bottom: 10%; cursor: pointer; z-index: 1000; }
