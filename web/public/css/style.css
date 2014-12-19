@@ -39,7 +39,7 @@ html { font-size: 100%; line-height: 1.625em; }
 body { background: #ffffff; font-family: "Raleway", "Segoe UI", Arial, sans-serif; font-weight: 400; color: #555555; position: relative; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 @media only screen and (max-width: 767px) { body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; width: 100%; min-width: 0; } }
 
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 
 .hide { display: none; }
 
@@ -1710,4 +1710,4 @@ body#home #kinetic-bg > .wrapper p.contact a { color: white; }
 @media only screen and (max-width: 700px) { .jumplinks li { display: inline-block; width: 50%; }
   .jumplinks li:first-child, .jumplinks li:first-child + li { border-bottom: 1px solid #ececec; } }
 @media only screen and (max-width: 768px) { .jumplinks a { font-size: 14px; font-size: 0.875rem; } }
-.prompt-scroll-down { position: absolute; left: 0; right: 0; width: 100%; bottom: 10%; cursor: pointer; z-index: 1000; }
+.prompt-scroll-down { position: absolute; left: 0; right: 0; width: 100%; bottom: 15%; cursor: pointer; z-index: 1000; -webkit-transition-property: opacity, bottom; -moz-transition-property: opacity, bottom; -o-transition-property: opacity, bottom; transition-property: opacity, bottom; -webkit-transition-duration: 0.5s; -moz-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }

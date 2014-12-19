@@ -86,7 +86,7 @@ class Cookie:
                     break
                 i -= 1
             h += 1
-        print "word", word  # TODO: remove this logging
+        # print "word", word
         return word
 
     def __special(self, s):
@@ -143,75 +143,85 @@ class Cookie:
         return s
 
     def __search_(self, h):
+        # print "__search_"
         self.__n2 = 1
-        print "self.__words", len(self.__words)
         while h > 0:
             if self.__eliminate_("".join(self.__l[h - 6:h]), self.__words[4], 4):
-                print "-=6"
+                # print "-=6"
                 self.__l2.append("".join(self.__l[h - 6:h]))
                 h -= 6
             elif self.__eliminate_("".join(self.__l[h - 5:h]), self.__words[3], 3):
-                print "-=5"
+                # print "-=5"
                 self.__l2.append("".join(self.__l[h - 5:h]))
                 h -= 5
             elif self.__eliminate_("".join(self.__l[h - 4:h]), self.__words[2], 2):
-                print "-=4"
+                # print "-=4"
                 self.__l2.append("".join(self.__l[h - 4:h]))
                 h -= 4
             elif self.__eliminate_("".join(self.__l[h - 3:h]), self.__words[1], 1):
-                print "-=3"
+                # print "-=3"
                 self.__l2.append("".join(self.__l[h - 3:h]))
                 h -= 3
             elif self.__eliminate_("".join(self.__l[h - 2:h]), self.__words[0], 0):
-                print "-=2"
+                # print "-=2"
                 self.__l2.append("".join(self.__l[h - 2:h]))
                 h -= 2
             elif self.__eliminate_("".join(self.__l[h - 1:h]), self.__words[5], 5):
-                print "-=1"
+                # print "-=1"
                 self.__l2.append("".join(self.__l[h - 1:h]))
                 h -= 1
             else:
-                print "-=11"
+                # print "-=11"
                 self.__l2.append("".join(self.__l[h - 1:h]))
                 h -= 1
         return
 
     def ___eliminate(self, s, word, i):
+        # print "___eliminate"
         a = self.__binsearch(word, s)
         if a != -1:
             self.__n1 *= int(self.__number[i][a])
             return True
 
     def __eliminate_(self, s, word, i):
+        # print "__eliminate_"
         a = self.__binsearch(word, s)
         if a != -1:
             self.__n2 *= int(self.__number[i][a])
             return True
 
     def ___search(self, j):
+        # print "___search"
         self.__n1 = 1
         while j < self.__ln:  # TODO: make __ln global
             if self.___eliminate("".join(self.__l[j:j + 6]), self.__words[4], 4):
                 self.__l1.append("".join(self.__l[j:j + 6]))
                 j += 6
+                # print "j += 6"
             elif self.___eliminate("".join(self.__l[j:j + 5]), self.__words[3], 3):
                 self.__l1.append("".join(self.__l[j:j + 5]))
                 j += 5
+                # print "j += 5"
             elif self.___eliminate("".join(self.__l[j:j + 4]), self.__words[2], 2):
                 self.__l1.append("".join(self.__l[j:j + 4]))
                 j += 4
+                # print "j += 4"
             elif self.___eliminate("".join(self.__l[j:j + 3]), self.__words[1], 1):
                 self.__l1.append("".join(self.__l[j:j + 3]))
                 j += 3
+                # print "j += 3"
             elif self.___eliminate("".join(self.__l[j:j + 2]), self.__words[0], 0):
                 self.__l1.append("".join(self.__l[j:j + 2]))
                 j += 2
+                # print "j += 2"
             elif self.___eliminate("".join(self.__l[j:j + 1]), self.__words[5], 5):
                 self.__l1.append("".join(self.__l[j:j + 1]))
                 j += 1
+                # print "j += 1"
             else:
                 self.__l1.append("".join(self.__l[j:j + 1]))
                 j += 1
+                # print "j += 11"
         return
 
     def __name(self):
@@ -250,12 +260,13 @@ class Cookie:
         sg = "¡£|£¬|,|£¡|¡­|!|¡¶|¡·|<|>|\"|'|:|£º|£¿|\?|¡¢|\||¡°|¡±|¡®|¡¯|£»|¡ª|£¨|£©|¡¤|\(|\)|¡¡".decode('gbk')
         i = 0
         m = ""
+        # print "len(self.__l2)", len(self.__l2)
         while i in range(len(self.__l2) - 2):
             if len(self.__l2[i]) == 1 and self.__l2[i] not in sg:
                 if self.__l2[i] in self.__bjx:
                     if len(self.__l2[i + 1]) == 1 and (self.__l2[i + 1] not in sg):
                         if len(self.__l2[i + 2]) == 1 and (self.__l2[i + 2] not in "ÊÇÓÐÄÜ".decode('gbk')) and (
-                                self.__l2[i + 2] not in sg):
+                                    self.__l2[i + 2] not in sg):
                             self.__l2[i] = "".join(self.__l2[i:i + 3])
                             del self.__l2[i + 1:i + 3]
                             m = "t"
@@ -273,7 +284,7 @@ class Cookie:
                 i += 1
         if m != "t":
             h = len(self.__l2) - 2
-            print "self.__l2", self.__l2
+            # print "self.__l2", self.__l2
             if len(self.__l2[h]) == 1 and self.__l2[h] in self.__bjx:
                 if len(self.__l2[h + 1]) == 1 and self.__l2[h + 1] not in sg:
                     self.__l2[h] = "".join(self.__l2[h:h + 2])
@@ -281,14 +292,17 @@ class Cookie:
 
     def slice(self, para):
         s = para
-        print s
+        # print s
         for i in range(len(s)):
             self.__l.append(s[i:i + 1])
 
         self.__ln = len(self.__l)
         self.__l = self.__userseg(self.__l)
+        # print "self.__l", self.__l
         self.___search(0)
-        self.__search_(0)
+        self.__search_(self.__ln)
+        # print "self.__l in slice", self.__l
+        # print "len(self.__l2) in slice", len(self.__l2)
         self.__l2 = self.__l2[::-1]
         self.__l1 = self.__special(self.__l1)
         self.__l2 = self.__special(self.__l2)
@@ -304,6 +318,6 @@ class Cookie:
                 out_words = '<strong style="font-size:x-large; color:#AB5A0A">|</strong>'.join(self.__l1) + '<br>'
             else:
                 out_words = '<strong style="font-size:x-large; color:#AB5A0A">|</strong>'.join(self.__l2) + '<br>'
-        print out_words
+        # print out_words
         return out_words
 

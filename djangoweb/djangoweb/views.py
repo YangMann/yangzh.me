@@ -24,6 +24,7 @@ def project_cookie(request, arg):
             return HttpResponse(t.render(c))
         elif request.META.get('REQUEST_METHOD', 'UNKNOWN') == 'POST':
             cookie = Cookie.Cookie()
-            cookie.slice(request.POST.get('user-input-1'))
+            return render_to_response('projects/Cookie/main4.html',
+                                      {"out_words": cookie.slice(request.POST.get('user-input-1'))})
     else:
         return render_to_response('projects/Cookie/index.html')

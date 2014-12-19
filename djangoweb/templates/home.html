@@ -81,7 +81,7 @@
          * Copyright (C) Yang ZHANG <zhangyang93@rocketmail.com>
          *     A canvas trick to display dynamic triangles and simulate a 3D experience
          */
-        $(document).ready(function () {
+        $(function () {
             var canvasHeight = window.innerHeight, canvasWidth = window.innerWidth, nodesPerLine = 10,
                     lines = 5, threshold = 140, maxDrift = 100, maxDim = 30, baseColor = "#065688", ratio = 0.6;
             var canvas = $(document).find("#kinetic-bg>canvas"), ctx = canvas[0].getContext("2d")/*,
@@ -232,6 +232,14 @@
                 draw();
                 requestAnimFrame(loop);
             })();
+        });
+    </script>
+    <script>
+        $(function () {
+            setTimeout(function () {
+                $(document).find(".prompt-scroll-down").css("opacity", 1).css("filter", "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)")
+                        .css("bottom", "10%");
+            }, 2000);
         });
     </script>
 {% endblock %}
