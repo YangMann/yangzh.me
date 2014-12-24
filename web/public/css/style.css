@@ -1711,3 +1711,7 @@ body#home #kinetic-bg > .wrapper p.contact a { color: white; }
   .jumplinks li:first-child, .jumplinks li:first-child + li { border-bottom: 1px solid #ececec; } }
 @media only screen and (max-width: 768px) { .jumplinks a { font-size: 14px; font-size: 0.875rem; } }
 .prompt-scroll-down { position: absolute; left: 0; right: 0; width: 100%; bottom: 15%; cursor: pointer; z-index: 1000; -webkit-transition-property: opacity, bottom; -moz-transition-property: opacity, bottom; -o-transition-property: opacity, bottom; transition-property: opacity, bottom; -webkit-transition-duration: 0.5s; -moz-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
+
+article figure:first-child { padding-bottom: 1.125em; }
+
+#web img { max-width: 220px; }

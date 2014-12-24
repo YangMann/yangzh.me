@@ -184,3 +184,16 @@ body#home {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
+
+article {
+  figure:first-child {
+    padding-bottom: 1.125em;
+//    png base color: #d0d7db;
+  }
+}
+
+#web {
+  img {
+    max-width: 220px;
+  }
+}
