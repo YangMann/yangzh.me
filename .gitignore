@@ -1,5 +1,6 @@
 # Created by .gitignore support plugin (hsz.mobi)
 .iml
+.psd
 
 ### Sass template
 .sass-cache

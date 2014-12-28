@@ -70,43 +70,50 @@
     <div class="outer-wrapper" id="web">
         <div class="wrapper">
             <section class="row">
-                <article class="eight columns centered">
-                    <figure>
-                        <img src="{% static "img/web.png" %}" alt="web">
-                    </figure>
-                    <h2>Web Development</h2>
-
-                    <p></p>
-                </article>
+                <h4 class="align-left">WEB</h4>
+            </section>
+            <section class="row">
+                <div class="six columns">
+                    <a title="YANGZH.ME &mdash; Yang Zhang's Portfolio">
+                        <img src="{% static "img/projects/yangzh-me.jpg" %}" alt="YANGZH.ME | Yang Zhang's Portfolio">
+                    </a>
+                    <a title="Official website for the 6th National Student Social Practice & Science Contest on Energy & Emission Reduction">
+                        <img src="{% static "img/projects/emission-20beta-index-html.png" %}"
+                             alt="Official website for the 6th National Student Social Practice & Science Contest on Energy & Emission Reduction">
+                    </a>
+                    <a title="Prof. Xinbing Wang's homepage">
+                        <img src="{% static "img/projects/xwang8-index-html.png" %}"
+                             alt="Prof. Xinbing Wang's homepage">
+                    </a>
+                </div>
+                <div class="six columns">
+                    <a href="http://iwct.sjtu.edu.cn/Personal/mxtao/index.html" title="Prof. Meixia Tao's homepage"
+                       target="_blank">
+                        <img src="{% static "img/projects/iwct-sjtu-edu-cn-Personal-mxtao-index-html.png" %}"
+                             alt="Prof. Meixia Tao's Homepage">
+                    </a>
+                    <a href="http://chichi.sjtu1896.com" target="_blank"
+                       title="ChiChi交大吃吃 &mdash; SJTU Official Student Cuisine Organization">
+                        <img src="{% static "img/projects/chichi-mockup.jpg" %}"
+                             alt="ChiChi交大吃吃 &mdash; SJTU Official Student Cuisine Organization">
+                    </a>
+                    <a title="Pass申请通">
+                        <img src="{% static "img/projects/sqt-intro.jpg" %}" alt="Pass申请通">
+                    </a>
+                    <a title='Official website for the Shanghai "Smart City Week" App Design Contest'>
+                        <img src="{% static "img/projects/new1-20beta-index-html.jpg" %}"
+                             alt='Official website for the Shanghai "Smart City Week" App Design Contest'>
+                    </a>
+                </div>
             </section>
         </div>
-        <div class="wrapper">
+    </div>
+    <div class="outer-wrapper" id="mobile">
+        <div class="wrapper nopad">
             <section class="row">
-                <article class="eight columns">
-                    <h3>YANGZH.ME</h3>
-                </article>
+                <h4 class="align-left">APP</h4>
             </section>
-        </div>
-        <div class="wrapper shaded">
-            <section class="row">
-                <article class="eight columns push_four">
-                    <h3>申请通 Apply!Apply!</h3>
-                </article>
-            </section>
-        </div>
-        <div class="wrapper">
-            <section class="row">
-                <article class="eight columns">
-                    <h3>Prof. Meixia Tao's Homepage</h3>
-                </article>
-            </section>
-        </div>
-        <div class="wrapper shaded">
-            <section class="row">
-                <article class="eight columns push_four">
-                    <h3>Prof. Xinbing Wang's Homepage</h3>
-                </article>
-            </section>
+            <section class="row"></section>
         </div>
     </div>
 {% endblock %}

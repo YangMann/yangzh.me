@@ -21,6 +21,10 @@ body#home {
     padding-bottom: .5em;
   }
 
+  nav {
+    z-index: 1;
+  }
+
   #kinetic-bg {
     //    $canvas-height: 400px;
     //    height: $canvas-height;
@@ -63,11 +67,16 @@ body#home {
 
 .wrapper {
   padding: 75px 20px 70px 20px;
-}
 
-.wrapper.shaded {
-  background-color: #E9E9E9 !important;
-  background-size: cover;
+  &.nopad {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &.shaded {
+    background-color: #E9E9E9 !important;
+    background-size: cover;
+  }
 }
 
 .nobreak {
@@ -193,7 +202,20 @@ article {
 }
 
 #web {
-  img {
-    max-width: 220px;
+  div.columns {
+    > a {
+      position: relative;
+      display: block;
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
   }
+}
+
+.align-left {
+  text-align: left;
+}
+
+.outer-wrapper > .wrapper > .row > h4 {
+  margin-bottom: 1em;
 }

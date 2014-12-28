@@ -656,8 +656,8 @@ p { font-family: "Raleway", "Segoe UI", Arial, sans-serif; font-weight: 400; fon
 p.lead { font-size: 20px; font-size: 1.25rem; margin-bottom: 18.4133px; }
 @media only screen and (max-width: 768px) { p { font-size: 17.6px; font-size: 1.1rem; line-height: 1.625em; } }
 
-a { color: #d04526; text-decoration: none; outline: 0; line-height: inherit; }
-a:hover { color: #c03d20; }
+a { color: #4A96C5; text-decoration: none; outline: 0; line-height: inherit; }
+a:hover { color: #3C789D; }
 
 /*=====================================================
  Lists  ======================================================*/
@@ -1262,7 +1262,7 @@ img { -ms-interpolation-mode: bicubic; }
   .navbar ul li.active .dropdown ul { position: relative; top: 0; background: #36393b; min-height: 50px; max-height: 250px; height: auto; overflow: auto; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; }
   .navbar ul li.active .dropdown ul li { min-height: 50px; border-bottom: #3e4043; }
   .navbar ul li.active .dropdown ul li a { color: #fff; border-bottom: 1px solid #313436; }
-  .navbar ul li.active .dropdown ul li a:hover { color: #d04526; } }
+  .navbar ul li.active .dropdown ul li a:hover { color: #4A96C5; } }
 
 @media only screen and (min-width: 768px) and (max-width: 939px) { .navbar > ul > li > .btn a { padding: 0 9.88854px 0 9.88854px !important; }
   .navbar ul > li .dropdown ul li.active .dropdown { left: -320px; } }
@@ -1286,12 +1286,12 @@ img { -ms-interpolation-mode: bicubic; }
   .navbar li .dropdown.active .dropdown ul { position: relative; top: 0; background: #36393b; min-height: 50px; max-height: 250px; height: auto; overflow: auto; -moz-box-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; }
   .navbar li .dropdown.active .dropdown ul li { min-height: 50px; border-bottom: #3e4043; }
   .navbar li .dropdown.active .dropdown ul li a { color: #fff; border-bottom: 1px solid #313436; }
-  .navbar li .dropdown.active .dropdown ul li a:hover { color: #d04526; } }
+  .navbar li .dropdown.active .dropdown ul li a:hover { color: #4A96C5; } }
 
 .navbar li .dropdown ul { margin: 0; display: block; }
 .navbar li .dropdown ul > li { position: relative; display: block; width: 100%; float: left; text-align: left; height: auto; -moz-border-radius: none; -webkit-border-radius: none; border-radius: none; }
 @media only screen and (min-width: 768px) and (max-width: 939px) { .navbar li .dropdown ul > li { max-width: 320px; word-wrap: break-word; } }
-.navbar li .dropdown ul > li a { display: block; padding: 0 20px; color: #d04526; border-bottom: 1px solid #ccc; text-shadow: none; height: 50.86172px; line-height: 48.86172px; }
+.navbar li .dropdown ul > li a { display: block; padding: 0 20px; color: #4A96C5; border-bottom: 1px solid #ccc; text-shadow: none; height: 50.86172px; line-height: 48.86172px; }
 @media only screen and (max-width: 767px) { .navbar li .dropdown ul > li a { padding: 0 20px; } }
 .navbar li .dropdown ul > li .dropdown { display: none; background: white; }
 .navbar li .dropdown ul li:first-child a { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; }
@@ -1304,7 +1304,7 @@ img { -ms-interpolation-mode: bicubic; }
 @media only screen and (max-width: 767px) { .gumby-no-touch .navbar ul li:hover .dropdown ul { overflow: auto; background: #36393b; }
   .gumby-no-touch .navbar ul li:hover .dropdown ul li { border-bottom: #3e4043; }
   .gumby-no-touch .navbar ul li:hover .dropdown ul li a { color: #fff; border-bottom: 1px solid #313436; }
-  .gumby-no-touch .navbar ul li:hover .dropdown ul li a:hover { color: #d04526; } }
+  .gumby-no-touch .navbar ul li:hover .dropdown ul li a:hover { color: #4A96C5; } }
 
 .gumby-no-touch .navbar li .dropdown ul > li:hover .dropdown, .gumby-touch .navbar li .dropdown ul > li.active .dropdown { border-top: none; display: block; position: absolute; z-index: 9999; left: 100%; top: 0; margin-top: 0; }
 @media only screen and (max-width: 767px) { .gumby-no-touch .navbar li .dropdown ul > li:hover .dropdown, .gumby-touch .navbar li .dropdown ul > li.active .dropdown { position: relative; left: 0; }
@@ -1561,7 +1561,7 @@ label + .xnarrow:last-child, label + .narrow:last-child, label + .normal:last-ch
 .badge.warning a, .label.warning a { color: #644405; }
 .badge.success, .label.success { background: #58c026; border: 1px solid #58c026; }
 .badge.light, .label.light { background: #fff; color: #555555; border: 1px solid #f2f2f2; }
-.badge.light a, .label.light a { color: #d04526; }
+.badge.light a, .label.light a { color: #4A96C5; }
 .badge.dark, .label.dark { background: #212121; border: 1px solid #212121; }
 
 .badge { padding: 0 10px; font-size: 14px; font-size: 0.875rem; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
@@ -1674,6 +1674,7 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 body#home { font-weight: 400; text-align: center; overflow-x: hidden; }
 body#home h1, body#home h2, body#home h3, body#home h4, body#home h5, body#home h6 { font-weight: 300; }
 body#home h2 { padding-bottom: .5em; }
+body#home nav { z-index: 1; }
 body#home #kinetic-bg { position: relative; }
 body#home #kinetic-bg > .wrapper { position: absolute; width: 100%; height: 100%; top: 0; left: 0; right: 0; background: transparent url(../img/bgz.png); }
 body#home #kinetic-bg > .wrapper .row { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
@@ -1683,7 +1684,7 @@ body#home #kinetic-bg > .wrapper p.contact { text-align: center; }
 body#home #kinetic-bg > .wrapper p.contact a { color: white; }
 
 .wrapper { padding: 75px 20px 70px 20px; }
-
+.wrapper.nopad { padding-top: 0; padding-bottom: 0; }
 .wrapper.shaded { background-color: #E9E9E9 !important; background-size: cover; }
 
 .nobreak { white-space: nowrap; }
@@ -1714,4 +1715,8 @@ body#home #kinetic-bg > .wrapper p.contact a { color: white; }
 
 article figure:first-child { padding-bottom: 1.125em; }
 
-#web img { max-width: 220px; }
+#web div.columns > a { position: relative; display: block; margin-bottom: 40px; overflow: hidden; }
+
+.align-left { text-align: left; }
+
+.outer-wrapper > .wrapper > .row > h4 { margin-bottom: 1em; }
