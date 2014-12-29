@@ -33,10 +33,9 @@
                 <h4>BIO</h4>
 
                 <p>I am a senior student in the <a href="http://english.seiee.sjtu.edu.cn/english/info/8338.htm">IEEE
-                    Honor Class</a> at Shanghai Jiao Tong University, majoring in Computer Science & Technology. I
-                    am passionate and motivated. I leaded or participated in several successful <a href="#">research
-                        projects</a>
-                    during the undergraduate years. </p>
+                    Honor Class</a> at <a href="http://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a>, majoring in
+                    Computer Science & Technology. I am passionate and motivated. I leaded or participated in several
+                    successful <a href="#">research projects</a> during the undergraduate years. </p>
 
                 <p>I love to design & make cool stuffs. SCROLL DOWN to see more! </p>
             </article>
@@ -68,7 +67,7 @@
         </div>
     </div>
     <div class="outer-wrapper" id="web">
-        <div class="wrapper">
+        <div class="wrapper shaded">
             <section class="row">
                 <h4 class="align-left">WEB</h4>
             </section>
@@ -92,7 +91,7 @@
                         <img src="{% static "img/projects/iwct-sjtu-edu-cn-Personal-mxtao-index-html.png" %}"
                              alt="Prof. Meixia Tao's Homepage">
                     </a>
-                    <a href="http://chichi.sjtu1896.com" target="_blank"
+                    <a href="http://chichi.sjtu1896.com/blog" target="_blank"
                        title="ChiChi交大吃吃 &mdash; SJTU Official Student Cuisine Organization">
                         <img src="{% static "img/projects/chichi-mockup.jpg" %}"
                              alt="ChiChi交大吃吃 &mdash; SJTU Official Student Cuisine Organization">
@@ -109,11 +108,38 @@
         </div>
     </div>
     <div class="outer-wrapper" id="mobile">
-        <div class="wrapper nopad">
+        <div class="wrapper">
             <section class="row">
                 <h4 class="align-left">APP</h4>
             </section>
-            <section class="row"></section>
+        </div>
+        <div class="wrapper" id="chichi">
+            <section class="row">
+                <article class="four columns">
+                    <figure>
+                        <img src="{% static "img/projects/chichi-gif-mockup.gif" %}" alt="ChiChi UI">
+                    </figure>
+                </article>
+                <article class="seven columns push_one">
+                    <figure>
+                        <img src="{% static "img/projects/chichi_launcher.png" %}" alt="ChiChi Icon">
+                    </figure>
+                    <h3>ChiChi</h3>
+
+                    <p><a href="http://page.renren.com/601599241" target="_blank">ChiChi</a> is the official student
+                        cuisine organization @ <a href="http://www.sjtu.edu.cn/" target="_blank">SJTU</a>. The ChiChi
+                        app is designed to present the daily feasts students can get from SJTU's dining halls. The
+                        app provides visually-tasty meal suggestions with beautiful photos from the shutterbugs at
+                        SJTU Photography Association. If you are hungry, just keep hitting the refresh button. You'll
+                        get HUNGRIER! :-) </p>
+
+                    <div class="buttons">
+                        <div class="btn metro download medium default icon-left entypo icon-github">
+                            <a href="https://github.com/YangMann/ChiChiApp_Android">View on Github</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
         </div>
     </div>
 {% endblock %}

@@ -197,7 +197,7 @@ body#home {
 article {
   figure:first-child {
     padding-bottom: 1.125em;
-//    png base color: #d0d7db;
+    //    png base color: #d0d7db;
   }
 }
 
@@ -216,6 +216,15 @@ article {
   text-align: left;
 }
 
-.outer-wrapper > .wrapper > .row > h4 {
-  margin-bottom: 1em;
+.outer-wrapper {
+  > .wrapper > .row > h4 {
+    margin-bottom: 1em;
+  }
+}
+
+#chichi {
+  padding-top: 0;
+  img {
+    max-height: 400px;
+  }
 }

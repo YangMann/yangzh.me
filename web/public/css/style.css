@@ -1720,3 +1720,6 @@ article figure:first-child { padding-bottom: 1.125em; }
 .align-left { text-align: left; }
 
 .outer-wrapper > .wrapper > .row > h4 { margin-bottom: 1em; }
+
+#chichi { padding-top: 0; }
+#chichi img { max-height: 400px; }
