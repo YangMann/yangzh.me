@@ -78,6 +78,7 @@ STATICFILES_DIRS = (
     ('js', os.path.join(STATIC_ROOT, 'js')),
     ('fonts', os.path.join(STATIC_ROOT, 'fonts')),
     ('img', os.path.join(STATIC_ROOT, 'img')),
+    ('docs', os.path.join(STATIC_ROOT, 'docs')),
 )
 
 # List of finder classes that know how to find static files in
