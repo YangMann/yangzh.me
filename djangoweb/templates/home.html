@@ -162,8 +162,17 @@
         $(function () {
             var canvasHeight = window.innerHeight, canvasWidth = window.innerWidth, nodesPerLine = 10,
                     lines = 5, threshold = 140, maxDrift = 100, maxDim = 30, baseColor = "#065688", ratio = 0.6;
-            var canvas = $(document).find("#kinetic-bg>canvas"), ctx = canvas[0].getContext("2d")/*,
-             colors = ['#f35d4f', '#f36849', '#c0d988', '#6ddaf1', '#f1e85b']*/;
+            var canvas = $(document).find("#kinetic-bg>canvas"), ctx;
+            try {
+                ctx = canvas[0].getContext("2d");
+            } catch (e) {
+                // IE8 fallback
+                var canvasWrapper = $(document).find("#kinetic-bg");
+                canvasWrapper.css("width", (document.documentElement.clientWidth || document.body.clientWidth) + "px")
+                        .css("height", (document.documentElement.clientHeight || document.body.clientHeight) + "px")
+                        .css("background-color", baseColor);
+            }
+            /*var colors = ['#f35d4f', '#f36849', '#c0d988', '#6ddaf1', '#f1e85b'];*/
             resizeCanvas();
             var nodeRows = [];
 
@@ -279,7 +288,12 @@
 
             (function init() {
                 canvas.css('background-color', baseColor);
-                window.addEventListener('resize', resizeCanvas, false);
+                if (window.addEventListener) {
+                    window.addEventListener('resize', resizeCanvas, false);
+                } else {
+                    // IE 8 fallback
+                    window.attachEvent('resize', resizeCanvas);
+                }
                 for (var i = 0; i < lines; i++) {
                     nodeRows.push([]);
                     for (var j = 0; j < nodesPerLine; j++) {
