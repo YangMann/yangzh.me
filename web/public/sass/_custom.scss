@@ -228,3 +228,30 @@ article {
     max-height: 400px;
   }
 }
+
+#proj, #research {
+  > .wrapper:first-child {
+    padding-bottom: 0;
+  }
+}
+
+#cookie {
+  background: url(../img/projects/cookie-ipad-mockup.jpg) no-repeat right bottom;
+  background-size: contain;
+  transition-duration: 0.5s;
+}
+
+#go {
+  background: url(../img/projects/go-to-dye-result.png) no-repeat left bottom;
+  background-size: contain;
+  transition-duration: 0.5s;
+}
+
+#aero {
+  img {
+    max-height: 90px;
+  }
+  background: url(../img/projects/quadcopter-02.jpg) no-repeat right bottom;
+  background-size: contain;
+  transition-duration: 0.5s;
+}
