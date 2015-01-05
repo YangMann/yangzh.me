@@ -248,10 +248,25 @@ article {
 }
 
 #aero {
-  img {
-    max-height: 90px;
-  }
   background: url(../img/projects/quadcopter-02.jpg) no-repeat right bottom;
+  background-size: contain;
+  transition-duration: 0.5s;
+}
+
+#citydrive {
+  background: url(../img/projects/citydrive_p5.png) no-repeat right bottom;
+  background-size: contain;
+  transition-duration: 0.5s;
+}
+
+#vdnet {
+  background: url(../img/projects/sim_map.png) no-repeat left bottom;
+  background-size: contain;
+  transition-duration: 0.5s;
+}
+
+#lane {
+  background: url(../img/projects/coord2.jpg) no-repeat right bottom;
   background-size: contain;
   transition-duration: 0.5s;
 }

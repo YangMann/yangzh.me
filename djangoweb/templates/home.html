@@ -191,11 +191,11 @@
                     <h3>Aero</h3>
 
                     <p>Aero is an indoor localization system based on visual SLAM conducted by AR.Drone and a smartphone
-                       taped to the drone. </p>
+                        taped to the drone. </p>
 
                     <p>AR.Drone 2.0 has embedded sensors, camera and WiFi. The visual SLAM algorithm collects data from
-                       the IMU on AR.Drone with camera video flow, and utilizes a smartphone to compute the indoor map
-                       and current location of the drone. </p>
+                        the IMU on AR.Drone with camera video flow, and utilizes a smartphone to compute the indoor map
+                        and current location of the drone. </p>
                 </article>
             </section>
         </div>
@@ -219,17 +219,68 @@
                 <h4 class="align-left">RESEARCH</h4>
             </section>
         </div>
+        <div class="wrapper" id="citydrive">
+            <section class="row">
+                <article class="eight columns">
+                    <h3>CityDrive</h3>
+
+                    <p>CityDrive is a driving speed optimizing system based on smartphone. It aimed at implementing
+                        a speed-optimizing driving system, so that the drivers who follow the suggestion speed provided
+                        by this system will pass every intersection in green light without pulling up. A paper based on
+                        this work was <a href="#publications">accepted</a> by IEEE INFOCOM, 2014.
+                    </p>
+                </article>
+            </section>
+        </div>
+        <div class="wrapper shaded" id="vdnet">
+            <section class="row">
+                <article class="eight columns push_four">
+                    <h3>VDNet</h3>
+
+                    <p>VDNet is a quadcopter assisted sparse VANET system. I proposed a novel VANET design in which some
+                        vehicles carries an on-board quadcopters. A vehicle location prediction algorithm was proposed
+                        to improve efficiency in this delay-tolerant network. A <a href="{% static "docs/VDNet.pdf" %}"
+                                                                                   target="_blank">paper</a>
+                        based on this work was submitted to IEEE INFOCOM, 2015.</p>
+                </article>
+            </section>
+        </div>
+        <div class="wrapper" id="lane">
+            <section class="row">
+                <article class="eight columns">
+                    <h3>Crowdsourcing Based Road Lane Detection</h3>
+
+                    <p>This project aims at only using data collected from sensors on smartphones of the
+                        drivers to detect lanes on roads, and utilizes methods of crowdsourcing and machine
+                        learning.</p>
+                </article>
+            </section>
+        </div>
         <div class="wrapper">
             <section class="row">
-                <article class="eight columns centered">
-                    <h5>Publications</h5>
+                <article class="eight columns centered" id="publications">
+                    <h4>Publications</h4>
+
+                    <ol class="align-left">
+                        <li>Yiran Zhao, <strong>Yang Zhang</strong>, Tuo Yu, Tianyuan Liu, Xinbing Wang, Xiaohua Tian
+                            and Xue Liu, “CityDrive: A map-generating and speed-optimizing driving system”, in
+                            <em>INFOCOM, 2014 Proceedings IEEE</em>.
+                            <a href="//ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6848139&queryText%3Dcitydrive"
+                               target="_blank">
+                                [LINK]
+                            </a></li>
+                        <li><strong>Yang Zhang</strong>, Chao Kong, Zhehui Zhang, Tuo Yu, Xiaohua Tian, Chunyi Peng,
+                            Xinbing Wang, Songwu Lu, “Crowdsourcing Based Road Lane Detection with a Machine
+                            Learning Approach”, submitted to <em>MobiSys 2015</em>.
+                        </li>
+                    </ol>
                 </article>
             </section>
         </div>
     </div>
     <div class="wrapper shaded">
         <section class="row">
-            <div class="six columns"><h5>YANGZH.ME IS UNDER CONSTRUCTION</h5></div>
+            <div class="six columns"><h5>&copy; 2015</h5></div>
             <div class="four columns">
                 <div class="metro medium btn icon-left entypo icon-doc-text default"><a
                         href="{% static "docs/Yang_Zhang_CV.pdf" %}" target="_blank">View my CV in printable version</a>
