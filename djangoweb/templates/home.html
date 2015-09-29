@@ -33,27 +33,39 @@
             <article class="six columns">
                 <h4>BIO</h4>
 
-                <p>I am a senior student in the <a href="//english.seiee.sjtu.edu.cn/english/info/8338.htm"
-                                                   target="_blank">IEEE
+                <p>I am a graduate student at Carnegie Mellon University, Pittsburgh, PA. I'm in the <a
+                        href="//mcds.cs.cmu.edu">Master of Computational Data Science</a> program. </p>
+
+                <p>I got my Bachelor's degree from <a href="//english.seiee.sjtu.edu.cn/english/info/8338.htm"
+                                                      target="_blank">IEEE
                     Honor Class</a> at <a href="//www.sjtu.edu.cn/" target="_blank">Shanghai Jiao Tong University</a>,
                     majoring in
-                    Computer Science & Technology. I am passionate and motivated. I leaded or participated in several
+                    Computer Science & Technology. I leaded or participated in several
                     successful <a href="#">research projects</a> during the undergraduate years. </p>
 
-                <p>I love to design & make cool stuffs. SCROLL DOWN to see more! </p>
+                <p>I am passionate and motivated. I love to design & make cool stuffs. SCROLL DOWN to see more! </p>
             </article>
             <article class="six columns">
                 <h4>INTERESTS</h4>
 
-                <p>I've completed several <a href="#">mobile systems</a> & <a href="#">intelligent transportation
-                    systems</a> (based on smart-phones) as research projects. Also, I have four-year experience in <a
-                        href="#">web design</a>.</p>
+                {#                <p>I've completed several <a href="#">mobile systems</a> & <a href="#">intelligent transportation#}
+                {#                    systems</a> (based on smart-phones) as research projects. Also, I have four-year experience in <a#}
+                {#                        href="#">web design</a>.</p>#}
+                {##}
+                {#                <p>I'm enthusiastic about <a href="#">game development</a>, <a href="#">human-computer interaction</a>#}
+                {#                    and <a href="#">artificial intelligence</a>. </p>#}
+                {##}
+                {#                <p>Classical and jazz music cultivated my passion for art. I have learned the accordion since the age of#}
+                {#                    4 and later the piano. </p>#}
+                <p>I have years of experience in full-stack <a href="#web">web development</a>. I enjoy designing the
+                    UI/UX and
+                    the architecture of applications and implementing them! </p>
 
-                <p>I'm enthusiastic about <a href="#">game development</a>, <a href="#">human-computer interaction</a>
-                    and <a href="#">artificial intelligence</a>. </p>
-
-                <p>Classical and jazz music cultivated my passion for art. I have learned the accordion since the age of
-                    4 and later the piano. </p>
+                <p>Also I am enthusiastic about software systems design and engineering. I've completed several <a
+                        href="#proj">mobile systems</a> & <a href="#research">intelligent transportation
+                    systems</a> (based on smart-phones) as research projects. I was a Software Engineer Intern at
+                    <a href="//www.linkedin.com/pub/yang-zhang/98/787/751#background-experience">Microsoft</a>,
+                    Shanghai.</p>
             </article>
         </section>
     </div>
@@ -76,21 +88,29 @@
             </section>
             <section class="row">
                 <div class="six columns">
+                    <a href="//yangmann.github.io/Paper"
+                       title="Paper &mdash; A antique Chinese style front-end framework [ON GOING]" target="_blank">
+                        <img src="{% static "img/projects/screencapture-yangmann-github-io-Paper.png" %}" gumby-retina
+                             alt="Paper &mdash; A antique Chinese style front-end framework">
+                    </a>
                     <a href="//github.com/YangMann/yangzh.me" title="YANGZH.ME &mdash; Yang Zhang's Portfolio"
                        target="_blank">
                         <img src="{% static "img/projects/yangzh-me.jpg" %}" alt="YANGZH.ME | Yang Zhang's Portfolio"
                              gumby-retina>
                     </a>
-                    <a title="Official website for the 6th National Student Social Practice & Science Contest on Energy & Emission Reduction">
-                        <img src="{% static "img/projects/emission-20beta-index-html.png" %}" gumby-retina
-                             alt="Official website for the 6th National Student Social Practice & Science Contest on Energy & Emission Reduction">
-                    </a>
                     <a title="Prof. Xinbing Wang's homepage" href="//xwang8-preview.azurewebsites.net" target="_blank">
                         <img src="{% static "img/projects/xwang8-index-html.png" %}" gumby-retina
                              alt="Prof. Xinbing Wang's homepage">
                     </a>
-                    <a title="Global alumni network for IWCT @ SJTU" href="//xwang8-preview.azurewebsites.net/student_globe.html" target="_blank">
-                        <img src="{% static "img/projects/screencapture-xwang8-preview-azurewebsites-net-student_globe-html.jpg" %}" gumby-retina
+                    <a title="Official website for the 6th National Student Social Practice & Science Contest on Energy & Emission Reduction">
+                        <img src="{% static "img/projects/emission-20beta-index-html.png" %}" gumby-retina
+                             alt="Official website for the 6th National Student Social Practice & Science Contest on Energy & Emission Reduction">
+                    </a>
+
+                    <a title="Global alumni network for IWCT @ SJTU"
+                       href="//iwct.sjtu.edu.cn/Personal/xwang8/student_globe.html" target="_blank">
+                        <img src="{% static "img/projects/screencapture-xwang8-preview-azurewebsites-net-student_globe-html.jpg" %}"
+                             gumby-retina
                              alt="Global alumni network of IWCT @ SJTU">
                     </a>
                 </div>
@@ -256,7 +276,8 @@
 
                     <p>This project aims at only using data collected from sensors on smartphones of the
                         drivers to detect lanes on roads, and utilizes methods of crowdsourcing and machine
-                        learning. A <a href="#publications">paper</a> based on this work was submitted to Mobisys, 2015. </p>
+                        learning. A <a href="#publications">paper</a> based on this work was submitted to Mobisys, 2015.
+                    </p>
                 </article>
             </section>
         </div>
@@ -273,10 +294,10 @@
                                target="_blank">
                                 [LINK]
                             </a></li>
-                        <li><strong>Yang Zhang</strong>, Chao Kong, Zhehui Zhang, Tuo Yu, Xiaohua Tian, Chunyi Peng,
-                            Xinbing Wang, Songwu Lu, “Crowdsourcing Based Road Lane Detection with a Machine
-                            Learning Approach”, submitted to <em>MobiSys 2015</em>.
-                        </li>
+{#                        <li><strong>Yang Zhang</strong>, Chao Kong, Zhehui Zhang, Tuo Yu, Xiaohua Tian, Chunyi Peng,#}
+{#                            Xinbing Wang, Songwu Lu, “Crowdsourcing Based Road Lane Detection with a Machine#}
+{#                            Learning Approach”, submitted to <em>MobiSys 2015</em>.#}
+{#                        </li>#}
                     </ol>
                 </article>
             </section>
@@ -329,9 +350,9 @@
 
             function Node(row, idx) {
                 this.x = canvasWidth / (nodesPerLine - 1) * idx
-                - Math.random() * threshold + threshold / 2;
+                        - Math.random() * threshold + threshold / 2;
                 this.y = canvasHeight / (lines - 1) * row
-                - Math.random() * threshold + threshold / 2;
+                        - Math.random() * threshold + threshold / 2;
                 // this.rgba = colors[Math.round(Math.random() * 4)];
                 // this.r = 1;
                 this.v = Math.random() * ratio - ratio / 2;
